@@ -1,4 +1,4 @@
-public class Products
+public class Product
 {
     public string Name { get; set; }
     public int Price { get; set; }
