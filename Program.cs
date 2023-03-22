@@ -1,11 +1,18 @@
-﻿List<string> products = new List<string>()
+﻿List<Product> products = new List<Product>()
 {
+    new Product()
+    {
+        Name = "Football",
+        Price = 15,
+        Sold = false
+    },
+    new Product()
+    {
+        Name = "Hockey Stick",
+        Price = 12,
+        Sold = false
+    }
     // collection initializer
-    "Football",
-    "Hockey Stick",
-    "Boomerang",
-    "Frisbee",
-    "Golf Putter"
 };
 
 string greeting = @"Welcome to Thrown For a Loop
@@ -15,7 +22,7 @@ Console.WriteLine("Products:");
 
 for (int i = 0; i < products.Count; i++)
 {
-    Console.WriteLine($"{i + 1}. {products[i]}");
+    Console.WriteLine($"{i + 1}. {products[i].Name}");
 }
 
 Console.WriteLine("Please enter a product number: ");
@@ -28,8 +35,8 @@ while (response > products.Count || response < 1)
     response = int.Parse(Console.ReadLine().Trim());
 }
 
-Console.WriteLine(@$"You chose: {products[response - 1]}.
-Thank you for your input!");
+Product chosenProduct = products[response - 1];
+Console.WriteLine($"You chose: {chosenProduct.Name}, which costs {chosenProduct.Price} dollars and is {(chosenProduct.Sold ? "" : "not ")}sold.");
 
 
 // Console.WriteLine($"You chose: {response}");
