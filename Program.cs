@@ -18,11 +18,12 @@
 string greeting = @"Welcome to Thrown For a Loop
 Your one-stop shop for used sporting equipment";
 
+Console.WriteLine(greeting);
 Console.WriteLine("Products:");
 
 for (int i = 0; i < products.Count; i++)
 {
-    Console.WriteLine($"{i + 1}. {products[i].Name}");
+    Console.WriteLine($"{i + 1}. {products[i]?.Name}");
 }
 
 Console.WriteLine("Please enter a product number: ");
